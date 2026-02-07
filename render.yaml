@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pokemon-battle-platform-server
+    env: node
+    plan: free
+    buildCommand: cd server && npm install && npm run build
+    startCommand: cd server && npm run start:prod
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
